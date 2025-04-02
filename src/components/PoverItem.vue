@@ -3,40 +3,6 @@ import { useShowStore } from "@/stores/counter";
 import { storeToRefs } from "pinia";
 
 const { show } = storeToRefs(useShowStore());
-
-// function onBeforeEnter(el: unknown) {
-//   console.log("BeforeEnter", el);
-// }
-
-// function onEnter(el: unknown, done) {
-//   console.log("onEnter", el);
-//   done();
-// }
-
-// function onAfterEnter(el: unknown) {
-// console.log("onAfterEnter", el);
-// }
-
-// function onEnterCancelled(el: unknown) {
-// console.log("onEnterCancelled", el);
-// }
-
-// function onBeforeLeave(el: unknown) {
-// console.log("onBeforeLeave", el);
-// }
-
-// function onLeave(el: unknown, done) {
-//   console.log("onLeave", el);
-//   done();
-// }
-
-// function onAfterLeave(el: unknown) {
-//   console.log("onAfterLeave", el);
-// }
-
-// function onLeaveCancelled(el: unknown) {
-//   console.log("onLeaveCancelled", el);
-// }
 </script>
 <template>
   <Transition appear name="slide-fade">

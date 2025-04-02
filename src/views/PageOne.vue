@@ -5,17 +5,9 @@ const { change } = useShowStore();
 </script>
 <template>
   <PoverItem />
+  <h2>This is page1</h2>
   <button @click="change">change showValue</button>
   <br />
-  <RouterLink to="/page2">Before the animation disappears toPage2</RouterLink>
 </template>
 
-<style>
-@media (min-width: 1024px) {
-  .about {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-  }
-}
-</style>
+<style></style>

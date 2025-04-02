@@ -1,24 +1,23 @@
 <script setup lang="ts">
 import { storeToRefs } from "pinia";
-import { RouterLink, RouterView } from "vue-router";
+import { ref } from "vue";
 import { useShowStore } from "./stores/counter";
+import PageOne from "./views/PageOne.vue";
+import PageTwo from "./views/PageTwo.vue";
 const { show } = storeToRefs(useShowStore());
+const state = ref(1);
 </script>
 
 <template>
   <h1>showValue:{{ show }}</h1>
-  <div class="wrapper">
-    <nav>
-      <RouterLink to="/">Page1</RouterLink>
-      <RouterLink to="/page2">Page2</RouterLink>
-    </nav>
-  </div>
 
-  <RouterView v-slot="{ Component }">
-    <keep-alive :include="['PageOne', 'PageTwo']">
-      <component :is="Component" />
-    </keep-alive>
-  </RouterView>
+  <div class="wrapper">
+    <button @click="state = 1">page1</button>
+    <button @click="state = 2">page2</button>
+  </div>
+  <keep-alive :include="['PageOne', 'PageTwo']">
+    <component :is="state === 1 ? PageOne : PageTwo" />
+  </keep-alive>
 </template>
 
 <style scoped>
